@@ -1,0 +1,19 @@
+services:
+    bim_test.email.application_mailer:
+        class: bim\testBundle\Services\ApplicationMailer
+        arguments:
+            - "@mailer"
+
+    bim_test.doctrine_listener.application_creation:
+        class: bim\testBundle\DoctrineListener\ApplicationCreationListener
+        arguments:
+            - "@bim_test.email.application_mailer"
+        tags:
+            - { name: doctrine.event_listener, event: PostPersist }
+    bim_test.purge:
+        class: bim\testBundle\Services\Purge
+        arguments:
+            - "@doctrine.orm.entity_manager"
+#    test.example:
+#        class: bim\testBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
