@@ -1,0 +1,7 @@
+core:
+    resource: "@coreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+test:
+    resource: "@testBundle/Resources/config/routing.yml"
+    prefix:   /platform

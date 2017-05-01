@@ -1,0 +1,9 @@
+<ul class="nav nav-pills nav-stacked">
+  {% for Condida in LastCondidaWithAdvert %}
+    <li>
+      <a href="{{ path('bim_platform_view', {'slug': Condida.advert.slug}) }}">
+        {{ Condida.content }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

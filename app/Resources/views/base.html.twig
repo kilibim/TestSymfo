@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  {% endblock %}
+  
+  <title>{% block title %}Avito{% endblock %}</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ path('bim_Core_index') }}">Accuiel</a></li>
+        <li><a href="{{ path('bim_platform_home') }}">Platforme</a></li>
+        <li><a href="path('bim_Core_Contact')">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="row">
+  <div class="col-md-3">
+    xxxxxx
+  </div>
+  <div class="col-md-9">
+    <h1>Les dernieres annonces</h1><br>
+    {% block body_content %}
+    {% endblock %}
+  </div>
+</div>
+{% block script %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+    {% extends "testBundle:Advert:layout.html.twig" %}
+
+    {% block title %}
+        Accuiel-{{ parent() }}
+    {% endblock %}
+
+
+    {% block Platform_body %}
+        <h2>Liste des annonces</h2>
+
+        <ul>
+            {% for advert in listAdverts %}
+                <li>
+                    <a href="{{ path('bim_platform_view', {'slug': advert.slug}) }}">
+                        {{ advert.title }}
+                    </a>
+                    par {{ advert.author }},
+                    le {{ advert.date|date('d/m/Y') }}
+                </li>
+            {% else %}
+                <li>Pas (encore !) d'annonces</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}

@@ -1,0 +1,63 @@
+
+# -------Mon premier test
+#hello_the_world:
+#    path:     /hello-world
+#    defaults: {_controller: testBundle:Advert:index }
+# ----------------------
+
+bim_platform_home:
+    path:      /{page}
+    defaults:
+        _controller: testBundle:Advert:index
+        page: 1
+    requirements:
+        page: \d*
+
+bim_platform_view:
+    path:      /advert/{slug}
+    defaults:
+        _controller: testBundle:Advert:view
+
+
+bim_platform_add:
+    path:      /add
+    defaults: { _controller: testBundle:Advert:add }
+
+bim_platform_edit:
+    path:      /edit/{id}
+    defaults:
+        _controller: testBundle:Advert:edit
+    requirements:
+        id: \d+
+
+bim_platform_delete:
+    path:      /delete/{id}
+    defaults:
+        _controller: testBundle:Advert:delete
+    requirements:
+        id: \d+
+bim_platform_AddApp:
+    path:     /AddApp/{id}
+    defaults:
+        _controller: testBundle:Application:AddApp
+bim_platform_purge:
+    path:     /Purge/{days}
+    defaults:
+        _controller: testBundle:Advert:purge
+    requirements:
+        days:  \d+
+#------------------------------- route de test ------------------------------------------------------
+bim_platform_view_slug:
+#-------------on peut utiliser variable system _format pour ajouter content-type de format choisi
+    path:      /{year}/{slug}.{format}
+    defaults:
+#------------_controller c'est un parametre system aussi
+        _controller: testBundle:Advert:viewSlug
+#-------------------------------------------------------
+# ---------- Valeur par defaut de parametre format
+        format: html
+#-------------------------------------------------
+    requirements:
+        year:   \d{4}
+        format: html|xml
+#-----------------------------------------------------------------------------------------------------
