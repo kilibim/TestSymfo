@@ -63,7 +63,3 @@ class Skill
         return $this->name;
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> master

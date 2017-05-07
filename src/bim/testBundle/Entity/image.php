@@ -126,7 +126,3 @@ class image
         return $this->alt;
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> master

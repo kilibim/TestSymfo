@@ -63,7 +63,3 @@ class Category
         return $this->name;
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> master
